@@ -20,7 +20,7 @@ def values(message):
 @bot.message_handler(content_types=['text'])
 def convert(message):
     try:
-        values = message.text.split()
+        values = message.text.lower().split() #Приводим к нижниму регистру и сплитаем по пробелу
         if len(values) != 3 : raise APIException('Неверное количество параметров.')
         quote, base, amount = values
 
